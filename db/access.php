@@ -37,5 +37,17 @@ $capabilities = array(
     ),
  
     // Add more capabilities here ...
-)
-?>
+
+    // New standard capability 'addinstance'.
+    'block/gsb:addinstance' => array(
+        'captype'       => 'write',
+        'contextlevel'  => CONTEXT_COURSE,
+        'archetypes'    => array(
+            'student'           => CAP_PROHIBIT,
+            'teacher'           => CAP_PROHIBIT,
+            'editingteacher'    => CAP_ALLOW,
+            'manager'           => CAP_ALLOW
+        ),
+        'clonepermissionsfrom'  => 'moodle/site:manageblocks'
+    )
+);
